@@ -40,6 +40,7 @@ const login = async (req, res) => {
         .json({ message: "Неверно введен логин или пароль" });
     }
   } catch {
+    console.error(error);
     res.status(500).json({ message: "Что-то пошло не так" });
   }
 };
@@ -98,6 +99,7 @@ const register = async (req, res, next) => {
         .json({ message: "Не удалось создать пользователя" });
     }
   } catch {
+    console.error(error);
     res.status(500).json({ message: "Что-то пошло не так" });
   }
 };
